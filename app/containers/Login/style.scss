@@ -1,0 +1,32 @@
+.login-page {
+  text-align: center;
+  letter-spacing: 1px;
+  flex: 1;
+  background-color: #eee;
+
+  .login-page-top {
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+
+    h3 {
+      margin-bottom: 10px;
+      color: #777;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    .slogan {
+      color: #888;
+    }
+
+    .greeting {
+      margin-top: 10px;
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
