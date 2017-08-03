@@ -1,5 +1,11 @@
 import React from "react";
-
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
+import * as userInfoActionsBindToReact from '../../../actions/userinfo.js';
+import {postRegister, postLogin} from "../../../fetch/auth.js";
+import LocalStore from "../../../util/localStore";
+import {USER_INFO} from "../../../constants/localStoreKey";
+import {hashHistory} from "react-router";
 import "./style.scss";
 
 class LoginRegisterForm extends React.Component {
@@ -28,13 +34,29 @@ class LoginRegisterForm extends React.Component {
                 </div>
 
                 <div className="form">
-                    <input placeholder="请输入邮箱" autoFocus="autoFocus" type="email"/>
-                    <input placeholder="请输入密码" type="password"/>
+                    <input placeholder="请输入邮箱" autoFocus="autoFocus" type="email"
+                           onChange={this.watchInputEmail.bind(this)}/>
+                    <input placeholder="请输入密码" type="password"
+                           onChange={this.watchInputPassword.bind(this)}/>
                 </div>
 
                 <button onClick={this.btnHandler.bind(this)}>{this.state.entry === "login" ? "登录" : "注册"}</button>
             </div>
         );
+    }
+
+    watchInputEmail(e) {
+        const email = ("" + e.target.value).trim();
+        this.setState({
+            email: email
+        })
+    }
+
+    watchInputPassword(e) {
+        const password = "" + e.target.value;
+        this.setState({
+            password: password
+        });
     }
 
     switchHandler() {
@@ -52,13 +74,49 @@ class LoginRegisterForm extends React.Component {
 
     btnHandler() {
         let entry = this.state.entry;
-        console.log('btn:' + entry);
+
+        const email = this.state.email;
+        const password = this.state.password;
+
+        let promise;
+        if (entry === "login") {
+            promise = postLogin({email: email, password: password});
+        } else {
+            // register
+            promise = postRegister({email: email, password: password});
+        }
+
+        promise.then(ans => {
+            const data = ans.data;
+            if (data.code === 0) {
+                const userinfo = data.info;
+                this.props.userInfoActions.update(userinfo);
+                LocalStore.setItem(USER_INFO, userinfo)
+
+                hashHistory.push('/home');
+            } else {
+                const errors = data.info;
+                alert(errors.join("\n"));
+            }
+        }).catch(ex => {
+            console.log(ex);
+        });
     }
 
 }
 
-// /* ---------- Redux bind React ---------- */
-// function mapStateToProps(state) {return {}}
-// function mapDispatchToProps(dispatch) {return {}}
-// export default connect(mapStateToProps, mapDispatchToProps)(LoginRegisterForm);
-export default LoginRegisterForm;
+/* ---------- Redux bind React ---------- */
+function mapStateToProps(state) {
+    return {
+        userinfo: state.userinfo
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        userInfoActions: bindActionCreators(userInfoActionsBindToReact, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginRegisterForm);
+// export default LoginRegisterForm;
