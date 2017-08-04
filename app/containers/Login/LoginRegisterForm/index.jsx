@@ -80,10 +80,10 @@ class LoginRegisterForm extends React.Component {
 
         let promise;
         if (entry === "login") {
-            promise = postLogin({email: email, password: password});
+            promise = postLogin(email, password);
         } else {
             // register
-            promise = postRegister({email: email, password: password});
+            promise = postRegister(email, password);
         }
 
         promise.then(ans => {
@@ -91,9 +91,9 @@ class LoginRegisterForm extends React.Component {
             if (data.code === 0) {
                 const userinfo = data.info;
                 this.props.userInfoActions.update(userinfo);
-                LocalStore.setItem(USER_INFO, userinfo)
+                LocalStore.setItem(USER_INFO, JSON.stringify(userinfo));
 
-                hashHistory.push('/home');
+                hashHistory.push('/');
             } else {
                 const errors = data.info;
                 alert(errors.join("\n"));
@@ -119,4 +119,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginRegisterForm);
-// export default LoginRegisterForm;

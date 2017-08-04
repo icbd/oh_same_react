@@ -6,4 +6,5 @@ const pre = __DEV__ ? "/api" : "";
 export const APIs = {
     "auth_register": pre + "/auth/register",
     "auth_login": pre + "/auth/login",
+    "auth_auth": pre + "/auth/auth",
 };
