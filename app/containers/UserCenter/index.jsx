@@ -1,18 +1,22 @@
 import React from "react";
 import TabBar from "../../components/TabBar";
+import _TopBar from "./_TopBar";
 
-//import "./style.scss";
+import "./style.scss";
 
-class Home extends React.Component {
+class UserCenter extends React.Component {
     constructor(props, context) {
         super(props, context);
     }
 
     render() {
         return (
-            <div className="home-page">Home
+            <div className="user-center-page">
+                <_TopBar name="Focus😀"/>
 
-                <TabBar activedAt="1"/>
+
+
+                <TabBar activedAt="4"/>
             </div>
         );
     }
@@ -21,5 +25,5 @@ class Home extends React.Component {
 // /* ---------- Redux bind React ---------- */
 // function mapStateToProps(state) {return {}}
 // function mapDispatchToProps(dispatch) {return {}}
-// export default connect(mapStateToProps, mapDispatchToProps)(Home);
-export default Home;
+// export default connect(mapStateToProps, mapDispatchToProps)(UserCenter);
+export default UserCenter;

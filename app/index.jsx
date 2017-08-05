@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './static/css/reset.scss';
 import './static/css/common.scss';
 import './static/css/global.scss';
 

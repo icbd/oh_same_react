@@ -39,15 +39,17 @@ class App extends React.Component {
         let userInfo = LocalStore.getItem(USER_INFO);
         console.log('userInfo');
         if (!userInfo) {
-            hashHistory.push('/login');
+            hashHistory.push('/Login');
         } else {
             userInfo = JSON.parse(userInfo);
             const promise = authLoginToken(userInfo.login_token, userInfo.id);
             promise.then(ans => {
                 const data = ans.data;
                 if (data.code !== 0) {
-                    hashHistory.push('/login');
+                    hashHistory.push('/Login');
                 }
+            }).catch(ans => {
+                alert("网络波动, 刷新试试");
             });
         }
     }
