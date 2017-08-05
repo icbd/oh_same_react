@@ -1,4 +1,5 @@
 import React from "react";
+import TopBar from "../../../components/TopBar";
 
 import "./style.scss";
 
@@ -14,7 +15,11 @@ class Setting extends React.Component {
 
     render() {
         return (
-            <div>Setting</div>
+
+            <div>
+                <TopBar title="设置"/>
+                Setting
+            </div>
         );
     }
 }

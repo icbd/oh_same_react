@@ -12,6 +12,16 @@ $topbarHeight: 45px;
   width: 100%;
   height: $topbarHeight;
 
+  div.title {
+    display: block;
+    width: 100%;
+    height: $topbarHeight;
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events:none;
+  }
+
   span {
     margin: 0;
     padding: 0;
@@ -20,12 +30,15 @@ $topbarHeight: 45px;
     display: inline-block;
     line-height: $topbarHeight;
     font-size: $topbarHeight / 2.8;
+  }
 
+  span.title {
     max-width: 60%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
   }
+
   span.icon {
     font-size: $topbarHeight / 2;
     margin-right: 10px;

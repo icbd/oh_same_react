@@ -12,8 +12,7 @@ class UserCenter extends React.Component {
     render() {
         return (
             <div className="user-center-page">
-                <_TopBar name="Focus😀"/>
-
+                <_TopBar title="😀FocusFocusFocus😀"/>
 
 
                 <TabBar activedAt="4"/>
