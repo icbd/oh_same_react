@@ -12,10 +12,15 @@
 }
 
 body {
-  background-color: #E6F4FF;
+  background-color: #eee;
   display: flex;
   flex-flow: column;
   min-height: 100vh;
+
+  @media all and (min-width: 768px) {
+    // 大屏幕条状显示, 四周浅天蓝色
+    background-color: $light_sky;
+  }
 }
 
 #root {
@@ -30,4 +35,5 @@ body {
   flex: 1;
   display: block;
   margin-top: $topbarHeight;
+  background-color: white;
 }

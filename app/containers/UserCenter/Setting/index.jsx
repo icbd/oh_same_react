@@ -18,15 +18,55 @@ class Setting extends React.Component {
     render() {
         return (
 
-            <div>
+            <div className="user-center-setting">
                 <TopBar title="设置"/>
+
 
                 <MyInfo/>
 
-                <Separation height="10px"/>
 
+                <Separation height="20px"/>
+
+
+                <div className="text-lists">
+                    <p>我的零钱</p>
+                    <p>我同感的</p>
+                    <p>我的订单</p>
+                    <p>我创建的频道</p>
+                </div>
+
+
+                <Separation height="20px"/>
+
+
+                <div className="text-lists">
+                    <p>功能</p>
+                    <p>隐私</p>
+                    <p>通知</p>
+                    <p>缓存</p>
+                    <p>关于 Oh-Same</p>
+                </div>
+
+
+                <Separation height="20px"/>
+
+
+                <div className="text-lists" onClick={this.lououtHandler.bind(this)}>
+                    <p className="logout">退出当前账户</p>
+                </div>
+
+                <div className="copyright">
+                    <p className="logo">Oh-Same</p>
+                    <p className="copyright">设计元素归 <a href="https://same.com" target="_blank">same.com</a> 版权所有</p>
+                </div>
             </div>
         );
+    }
+
+
+    lououtHandler() {
+        localStorage.clear();
+        location.href = "/";
     }
 }
 

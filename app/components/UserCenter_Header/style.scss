@@ -1,3 +1,5 @@
+@import "../../static/css/common";
+
 .user-center-header {
   img.avatar {
     display: inline-block;
@@ -7,7 +9,7 @@
     margin: 20px;
     vertical-align: middle;
 
-    border: 3px solid #D9F0FB;
+    border: 3px solid $light_sky;
   }
 
   div.info {
