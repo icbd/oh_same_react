@@ -1,9 +1,9 @@
 import React from "react";
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux'
 import * as userInfoActionsBindToReact from '../../../actions/userinfo.js';
 import {postRegister, postLogin} from "../../../fetch/auth.js";
 import LocalStore from "../../../util/localStore";
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import {USER_INFO} from "../../../constants/localStoreKey";
 import {hashHistory} from "react-router";
 import "./style.scss";
@@ -89,9 +89,9 @@ class LoginRegisterForm extends React.Component {
         promise.then(ans => {
             const data = ans.data;
             if (data.code === 0) {
-                const userinfo = data.info;
-                this.props.userInfoActions.update(userinfo);
-                LocalStore.setItem(USER_INFO, JSON.stringify(userinfo));
+                const userInfo = data.info;
+                this.props.userInfoActions.update(userInfo);
+                LocalStore.setItem(USER_INFO, JSON.stringify(userInfo));
 
                 hashHistory.push('/');
             } else {
@@ -108,7 +108,7 @@ class LoginRegisterForm extends React.Component {
 /* ---------- Redux bind React ---------- */
 function mapStateToProps(state) {
     return {
-        userinfo: state.userinfo
+        userInfo: state.userInfo
     }
 }
 

@@ -4,7 +4,9 @@ import {USER_INFO} from "../constants/localStoreKey";
 import Greeting from "../components/Greeting";
 import {authLoginToken} from "../fetch/auth.js";
 import {hashHistory} from "react-router";
-
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as userInfoActionsBindToReact from '../actions/userinfo.js';
 
 class App extends React.Component {
     constructor(props, context) {
@@ -37,7 +39,6 @@ class App extends React.Component {
 
         // 验证登录令牌有效, 否则引导登录/注册
         let userInfo = LocalStore.getItem(USER_INFO);
-        console.log('userInfo');
         if (!userInfo) {
             hashHistory.push('/Login');
         } else {
@@ -51,9 +52,25 @@ class App extends React.Component {
             }).catch(ans => {
                 alert("网络波动, 刷新试试");
             });
+
+            // init userInfo at redux
+            this.props.userInfoActions.update(userInfo);
         }
     }
 }
 
+/* ---------- Redux bind React ---------- */
+function mapStateToProps(state) {
+    return {
+        userInfo: state.userInfo
+    }
+}
 
-export default App;
+function mapDispatchToProps(dispatch) {
+    return {
+        userInfoActions: bindActionCreators(userInfoActionsBindToReact, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default App;
