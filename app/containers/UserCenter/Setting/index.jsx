@@ -2,6 +2,8 @@ import React from "react";
 import TopBar from "../../../components/TopBar";
 
 import "./style.scss";
+import MyInfo from "./MyInfo/index";
+import Separation from "../../../components/Separation/index";
 
 /**
  * 独立渲染
@@ -18,6 +20,10 @@ class Setting extends React.Component {
 
             <div>
                 <TopBar title="设置"/>
+
+                <MyInfo/>
+
+                <Separation height="10px"/>
 
             </div>
         );

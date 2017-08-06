@@ -38,11 +38,17 @@ class App extends React.Component {
 
 
         // 验证登录令牌有效, 否则引导登录/注册
-        let userInfo = LocalStore.getItem(USER_INFO);
+        let userInfo = this.props.userInfo;
+        if (userInfo === null) {
+            userInfo = LocalStore.getItem(USER_INFO);
+            userInfo = JSON.parse(userInfo);
+        }
+
         if (!userInfo) {
             hashHistory.push('/Login');
         } else {
-            userInfo = JSON.parse(userInfo);
+            this.props.userInfoActions.update(userInfo);
+
             const promise = authLoginToken(userInfo.login_token, userInfo.id);
             promise.then(ans => {
                 const data = ans.data;
@@ -53,8 +59,6 @@ class App extends React.Component {
                 alert("网络波动, 刷新试试");
             });
 
-            // init userInfo at redux
-            this.props.userInfoActions.update(userInfo);
         }
     }
 }
