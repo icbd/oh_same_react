@@ -1,0 +1,33 @@
+.user-center-header {
+  img.avatar {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 20px;
+    vertical-align: middle;
+
+    border: 3px solid #D9F0FB;
+  }
+
+  div.info {
+    color: #999;
+    vertical-align: middle;
+    display: inline-block;
+    max-width: calc(100% - 120px);
+
+    div.count {
+      span.number {
+        color: #555;
+        padding-left: 3px;
+        padding-right: 15px;
+      }
+    }
+
+    p.join-time {
+      font-size: 0.8em;
+      margin-top: 5px;
+    }
+  }
+
+}

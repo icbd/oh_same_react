@@ -3,6 +3,7 @@ import TabBar from "../../components/TabBar";
 import _TopBar from "./_TopBar";
 
 import "./style.scss";
+import UserCenter_Header from "../../components/UserCenter_Header/index";
 
 class UserCenter extends React.Component {
     constructor(props, context) {
@@ -14,6 +15,7 @@ class UserCenter extends React.Component {
             <div className="user-center-page">
                 <_TopBar title="😀FocusFocusFocus😀"/>
 
+                <UserCenter_Header/>
 
                 <TabBar activedAt="4"/>
             </div>

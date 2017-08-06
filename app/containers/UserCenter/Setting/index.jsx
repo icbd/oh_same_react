@@ -18,7 +18,7 @@ class Setting extends React.Component {
 
             <div>
                 <TopBar title="设置"/>
-                Setting
+
             </div>
         );
     }
