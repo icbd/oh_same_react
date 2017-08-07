@@ -1,7 +1,6 @@
 @import "../../../static/css/common";
 
 .login-register-form {
-  padding-bottom: 100px;
   .switch-bar {
     position: relative;
     background-color: white;
@@ -48,7 +47,7 @@
       border: none;
     }
 
-    input:first-child{
+    input:first-child {
       border-bottom: 1px solid #ddd;
     }
 
