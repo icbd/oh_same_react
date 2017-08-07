@@ -1,5 +1,6 @@
 import React from "react";
 import TopBar from "../../../components/TopBar";
+import {hashHistory} from "react-router";
 
 import "./style.scss";
 import MyInfo from "./MyInfo/index";
@@ -44,7 +45,7 @@ class Setting extends React.Component {
                     <p>隐私</p>
                     <p>通知</p>
                     <p>缓存</p>
-                    <p>关于 Oh-Same</p>
+                    <p onClick={this.aboutHandler.bind(this)}>关于 Oh-Same</p>
                 </div>
 
 
@@ -57,7 +58,8 @@ class Setting extends React.Component {
 
                 <div className="copyright">
                     <p className="logo">Oh-Same</p>
-                    <p className="copyright">设计元素归 <a href="https://same.com" target="_blank">same.com</a> 版权所有</p>
+                    <p className="copyright">设计元素归 <a
+                        href="https://same.com" target="_blank" rel="noopener noreferrer">same.com</a>版权所有</p>
                 </div>
             </div>
         );
@@ -67,6 +69,10 @@ class Setting extends React.Component {
     lououtHandler() {
         localStorage.clear();
         location.href = "/";
+    }
+
+    aboutHandler() {
+        hashHistory.push("/About");
     }
 }
 

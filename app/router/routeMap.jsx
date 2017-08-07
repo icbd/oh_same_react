@@ -8,6 +8,7 @@ import ChannelList from "../containers/ChannelList/index.jsx";
 import ChatList from "../containers/ChatList/index.jsx";
 import UserCenter from "../containers/UserCenter/index.jsx";
 import UserCenter_Setting from "../containers/UserCenter/Setting";
+import AboutPage from "../components/AboutPage/index";
 
 class routeMap extends React.Component {
     constructor(props, context) {
@@ -34,6 +35,8 @@ class routeMap extends React.Component {
                     <Route path="UserCenter" component={UserCenter}/>
                     <Route path="UserCenter/Setting" component={UserCenter_Setting}/>
 
+
+                    <Route path="About" component={AboutPage}/>
                 </Route>
             </Router>
         );

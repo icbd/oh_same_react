@@ -1,0 +1,47 @@
+@import "../../static/css/common";
+
+.about-page {
+
+  div.copyright {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: #eee;
+    p.logo {
+      color: $same_blue;
+      font-family: Palatino, “Palatino LT STD”, “Palatino Linotype”, “Book Antiqua”, Georgia, serif;
+      font-size: 2em;
+      font-weight: 900;
+      text-shadow: 0 0 1px $light_sky;
+    }
+
+    p.version {
+      font-size: 0.8em;
+      color: #aaa;
+    }
+
+    p.copyright {
+      color: #aaa;
+      font-size: 0.7em;
+      a {
+        color: #aaa;
+        text-decoration: none;
+      }
+    }
+  }
+
+  h3 {
+    padding: 20px 0 10px 0;
+  }
+
+  div.treaty, div.thanks {
+    background-color: #eee;
+    color: #777;
+    padding: 10px;
+
+    a {
+      color: #777;
+      text-decoration: none;
+    }
+  }
+}

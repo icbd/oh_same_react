@@ -20,7 +20,11 @@ class TopBar extends React.Component {
     }
 
     gotoLastPage() {
-        window.history.back();
+        if (window.history.length < 2) {
+            location.href = "/";
+        } else {
+            window.history.back();
+        }
     }
 }
 
