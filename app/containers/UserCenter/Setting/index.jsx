@@ -44,7 +44,7 @@ class Setting extends React.Component {
                     <p>功能</p>
                     <p>隐私</p>
                     <p>通知</p>
-                    <p>缓存</p>
+                    <p onClick={this.cacheHandler.bind(this)}>缓存</p>
                     <p onClick={this.aboutHandler.bind(this)}>关于 Oh-Same</p>
                 </div>
 
@@ -73,6 +73,11 @@ class Setting extends React.Component {
 
     aboutHandler() {
         hashHistory.push("/About");
+    }
+
+    cacheHandler() {
+        alert("请在浏览器设置中清除缓存.\n\n" +
+            "IOS: 设置->Safari->清除历史记录与网站数据");
     }
 }
 
