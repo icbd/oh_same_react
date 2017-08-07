@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 
 import "./style.scss";
+import {History} from "../../../../router/history";
 
 class _MyInfo extends React.Component {
     constructor(props, context) {
@@ -21,9 +22,14 @@ class _MyInfo extends React.Component {
                         {this.props.userInfo.email || "登录方式"}</p>
                 </div>
 
-                <div className="edit"><span><i className="fa fa-chevron-right"/></span></div>
+                <div className="edit"><span onClick={this.editClickHandler.bind(this)}><i
+                    className="fa fa-chevron-right"/></span></div>
             </div>
         );
+    }
+
+    editClickHandler() {
+        History.push("/UserCenter/Setting/SetInfo");
     }
 }
 

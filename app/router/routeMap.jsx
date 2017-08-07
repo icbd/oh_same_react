@@ -9,6 +9,7 @@ import ChatList from "../containers/ChatList/index.jsx";
 import UserCenter from "../containers/UserCenter/index.jsx";
 import UserCenter_Setting from "../containers/UserCenter/Setting";
 import AboutPage from "../components/AboutPage/index";
+import SetInfo from "../containers/UserCenter/Setting/SetInfo/index";
 
 class routeMap extends React.Component {
     constructor(props, context) {
@@ -35,6 +36,7 @@ class routeMap extends React.Component {
 
                     <Route path="UserCenter" component={UserCenter}/>
                     <Route path="UserCenter/Setting" component={UserCenter_Setting}/>
+                    <Route path="UserCenter/Setting/SetInfo" component={SetInfo}/>
 
 
                     <Route path="About" component={AboutPage}/>
