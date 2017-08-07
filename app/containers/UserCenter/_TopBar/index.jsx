@@ -4,7 +4,7 @@ import {History} from "../../../router/history";
 
 import "./style.scss";
 
-class TopBar extends React.Component {
+class _TopBar extends React.Component {
     constructor(props, context) {
         super(props, context);
     }
@@ -25,8 +25,8 @@ class TopBar extends React.Component {
     }
 }
 
-TopBar.propTypes = {
+_TopBar.propTypes = {
     title: PropTypes.string.isRequired
 };
 
-export default TopBar;
+export default _TopBar;

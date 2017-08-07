@@ -1,3 +1,10 @@
 import {browserHistory, hashHistory} from "react-router";
 
-export const History = browserHistory;
+let History;
+if (__DEV__) {
+    History = hashHistory;
+} else {
+    History = browserHistory;
+}
+
+export {History};

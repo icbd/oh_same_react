@@ -3,7 +3,7 @@ import TopBar from "../../../components/TopBar";
 import {History} from "../../../router/history";
 
 import "./style.scss";
-import MyInfo from "./MyInfo/index";
+import _MyInfo from "./_MyInfo/index";
 import Separation from "../../../components/Separation/index";
 
 /**
@@ -23,7 +23,7 @@ class Setting extends React.Component {
                 <TopBar title="设置"/>
 
 
-                <MyInfo/>
+                <_MyInfo/>
 
 
                 <Separation height="20px"/>

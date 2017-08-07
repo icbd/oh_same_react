@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 import "./style.scss";
 
-class MyInfo extends React.Component {
+class _MyInfo extends React.Component {
     constructor(props, context) {
         super(props, context);
     }
@@ -38,5 +38,5 @@ function mapDispatchToProps(dispatch) {
     return {}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyInfo);
-// export default MyInfo;
+export default connect(mapStateToProps, mapDispatchToProps)(_MyInfo);
+// export default _MyInfo;
