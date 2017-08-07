@@ -3,7 +3,7 @@ import LocalStore from "../util/localStore";
 import {USER_INFO} from "../constants/localStoreKey";
 import Greeting from "../components/Greeting";
 import {authLoginToken} from "../fetch/auth.js";
-import {hashHistory} from "react-router";
+import {History} from "../router/history";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as userInfoActionsBindToReact from '../actions/userinfo.js';
@@ -45,7 +45,7 @@ class App extends React.Component {
         }
 
         if (!userInfo) {
-            hashHistory.push('/Login');
+            History.push('/Login');
         } else {
             this.props.userInfoActions.update(userInfo);
 
@@ -53,7 +53,7 @@ class App extends React.Component {
             promise.then(ans => {
                 const data = ans.data;
                 if (data.code !== 0) {
-                    hashHistory.push('/Login');
+                    History.push('/Login');
                 }
             }).catch(ans => {
                 alert("网络波动, 刷新试试");

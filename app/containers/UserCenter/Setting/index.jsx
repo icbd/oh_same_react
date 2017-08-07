@@ -1,6 +1,6 @@
 import React from "react";
 import TopBar from "../../../components/TopBar";
-import {hashHistory} from "react-router";
+import {History} from "../../../router/history";
 
 import "./style.scss";
 import MyInfo from "./MyInfo/index";
@@ -30,10 +30,10 @@ class Setting extends React.Component {
 
 
                 <div className="text-lists">
-                    <p>我的零钱</p>
-                    <p>我同感的</p>
-                    <p>我的订单</p>
-                    <p>我创建的频道</p>
+                    <p onClick={this.moneyHandler.bind(this)}>我的零钱</p>
+                    <p onClick={this.sameHandler.bind(this)}>我同感的</p>
+                    <p onClick={this.orderHandler.bind(this)}>我的订单</p>
+                    <p onClick={this.channelHandler.bind(this)}>我创建的频道</p>
                 </div>
 
 
@@ -41,9 +41,9 @@ class Setting extends React.Component {
 
 
                 <div className="text-lists">
-                    <p>功能</p>
-                    <p>隐私</p>
-                    <p>通知</p>
+                    <p onClick={this.functionHandler.bind(this)}>功能</p>
+                    <p onClick={this.privateHandler.bind(this)}>隐私</p>
+                    <p onClick={this.noticeHandler.bind(this)}>通知</p>
                     <p onClick={this.cacheHandler.bind(this)}>缓存</p>
                     <p onClick={this.aboutHandler.bind(this)}>关于 Oh-Same</p>
                 </div>
@@ -65,20 +65,52 @@ class Setting extends React.Component {
         );
     }
 
-
-    lououtHandler() {
-        localStorage.clear();
-        location.href = "/";
+    moneyHandler() {
+        alert("开发排期中");//todo
     }
 
-    aboutHandler() {
-        hashHistory.push("/About");
+    sameHandler() {
+        alert("开发中");//todo
+    }
+
+    moneyHandler() {
+        alert("开发排期中");//todo
+    }
+
+    orderHandler() {
+        alert("开发排期中");//todo
+    }
+
+    channelHandler() {
+        alert("开发排期中");//todo
+    }
+
+    functionHandler() {
+        alert("开发排期中");//todo
+    }
+
+    privateHandler() {
+        alert("开发排期中");//todo
+    }
+
+    noticeHandler() {
+        alert("开发排期中");//todo
     }
 
     cacheHandler() {
         alert("请在浏览器设置中清除缓存.\n\n" +
             "IOS: 设置->Safari->清除历史记录与网站数据");
     }
+
+    aboutHandler() {
+        History.push("/About");
+    }
+
+    lououtHandler() {
+        localStorage.clear();
+        location.href = "/";
+    }
+
 }
 
 // /* ---------- Redux bind React ---------- */

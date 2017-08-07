@@ -1,5 +1,5 @@
 import React from "react";
-import {hashHistory} from "react-router";
+import {History} from "../../router/history";
 import "./style.scss";
 
 class TabBar extends React.Component {
@@ -33,19 +33,19 @@ class TabBar extends React.Component {
     }
 
     gotoHome() {
-        hashHistory.push("/");
+        History.push("/Home");
     }
 
     gotoChannelList() {
-        hashHistory.push("/ChannelList");
+        History.push("/ChannelList");
     }
 
     gotoChatList() {
-        hashHistory.push("/ChatList");
+        History.push("/ChatList");
     }
 
     gotoUserCenter() {
-        hashHistory.push("/UserCenter");
+        History.push("/UserCenter");
     }
 }
 

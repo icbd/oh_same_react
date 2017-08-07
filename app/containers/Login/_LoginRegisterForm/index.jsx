@@ -5,7 +5,7 @@ import LocalStore from "../../../util/localStore";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {USER_INFO} from "../../../constants/localStoreKey";
-import {hashHistory} from "react-router";
+import {History} from "../../../router/history";
 import "./style.scss";
 
 class LoginRegisterForm extends React.Component {
@@ -93,7 +93,7 @@ class LoginRegisterForm extends React.Component {
                 this.props.userInfoActions.update(userInfo);
                 LocalStore.setItem(USER_INFO, JSON.stringify(userInfo));
 
-                hashHistory.push('/');
+                History.push('/');
             } else {
                 const errors = data.info;
                 alert(errors.join("\n"));

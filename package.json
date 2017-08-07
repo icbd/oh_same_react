@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "init": "rm -rf .git && git init && git add . && git commit -m 'init' && ls -alF",
-    "start": "NODE_ENV=dev webpack-dev-server --progress --colors",
+    "start": "NODE_ENV=dev webpack-dev-server --history-api-fallback --progress --colors",
     "build": "rm -rf ./build/* && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --colors"
   },
   "repository": {

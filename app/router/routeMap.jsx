@@ -1,5 +1,5 @@
 import React from "react";
-import {Router, Route, IndexRoute} from "react-router";
+import {Router, Route, IndexRoute, Redirect} from "react-router";
 
 import App from "../containers/App.jsx";
 import Login from "../containers/Login";
@@ -21,6 +21,7 @@ class routeMap extends React.Component {
                 <Route path="/" component={App}>
 
                     <IndexRoute component={Home}/>
+                    <Redirect from="Home" to="/"/>
 
 
                     <Route path="Login" component={Login}/>

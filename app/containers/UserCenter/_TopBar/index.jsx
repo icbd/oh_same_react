@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {hashHistory} from "react-router";
+import {History} from "../../../router/history";
 
 import "./style.scss";
 
@@ -21,7 +21,7 @@ class TopBar extends React.Component {
     }
 
     gotoUserCenterSetting() {
-        hashHistory.push("/UserCenter/Setting");
+        History.push("/UserCenter/Setting");
     }
 }
 
