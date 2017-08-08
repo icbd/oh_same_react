@@ -155,7 +155,7 @@ class SetInfo extends React.Component {
                             // 查看简单反馈
                             const domain = up.getOption('domain');
                             const response = JSON.parse(info.response);//key and hash
-                            const sourceLink = domain + "/" + response.key; // 上传成功后的文件的Url
+                            const sourceLink = domain + response.key; // 上传成功后的文件的Url
 
                             if (__DEV__) {
                                 console.log("sourceLink:" + sourceLink);
