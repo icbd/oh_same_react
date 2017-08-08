@@ -13,3 +13,7 @@ export function postLogin(email = "", password = "") {
 export function authLoginToken(login_token, uid) {
     return axios.post(APIs.auth_auth, {login_token: login_token, uid: uid});
 }
+
+export function gainUpToken(login_token, uid) {
+    return axios.post(APIs.auth_uptoken, {login_token: login_token, uid: uid});
+}

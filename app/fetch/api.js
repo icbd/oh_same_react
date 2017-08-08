@@ -7,4 +7,7 @@ export const APIs = {
     "auth_register": pre + "/auth/register",
     "auth_login": pre + "/auth/login",
     "auth_auth": pre + "/auth/auth",
+    "auth_uptoken": pre + "/auth/uptoken",
+
+    "users": pre + "/users/",
 };
