@@ -20,7 +20,7 @@ class UserCenter_Header extends React.Component {
         return (
             <div className="user-center-header">
                 <img className="avatar"
-                     src="https://pbs.twimg.com/card_img/892352781952049153/pkB47epF?format=jpg&name=800x419"/>
+                     src={this.props.userInfo.avatar || "/assets/favicon.ico"}/>
 
                 <div className="info">
                     <div className="count">
