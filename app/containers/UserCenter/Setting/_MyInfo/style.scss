@@ -1,0 +1,48 @@
+@import "../../../../static/css/common";
+
+.user-center-setting-my-info {
+  position: relative;
+  img.avatar {
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    margin: 20px;
+    vertical-align: middle;
+
+    border: 3px solid $light_sky;
+  }
+
+  div.info {
+    display: inline-block;
+    max-width: calc(100% - 120px);
+    vertical-align: middle;
+
+    p.name {
+      font-weight: 600;
+      font-size: 1.2em;
+    }
+
+    p.login-type {
+      margin-top: 5px;
+      i {
+        color: mediumseagreen;
+        padding-right: 3px;
+      }
+      color: #999;
+    }
+  }
+
+  div.edit {
+    position: absolute;
+    top: 20px;
+    right: 7px;
+    height: 72px;
+    color: #999;
+
+    span {
+      line-height: 72px;
+    }
+  }
+
+}

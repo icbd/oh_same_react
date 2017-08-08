@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './static/css/reset.scss';
 import './static/css/common.scss';
 import './static/css/global.scss';
 
@@ -16,12 +17,12 @@ const store = createStore(rootReducer, initialState,
 
 // startup app with redux and router
 import {Provider} from 'react-redux';
-import {hashHistory} from 'react-router';
+import {History} from "./router/history";
 import RouteMap from './router/routeMap';
 
 ReactDOM.render(
     <Provider store={store}>
-        <RouteMap history={hashHistory}/>
+        <RouteMap history={History}/>
     </Provider>
     ,
     document.getElementById('root')

@@ -1,0 +1,68 @@
+@import "../../../static/css/common";
+
+.login-register-form {
+  .switch-bar {
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    color: #ccc;
+    span {
+      width: 100%;
+      margin: 10px;
+    }
+    span.active {
+      color: $same_blue;
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 0;
+      transition: left 1s;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 10px;
+      border-color: transparent transparent #eee transparent;
+    }
+
+    .arrow.register {
+      left: calc(25% - 10px);
+    }
+    .arrow.login {
+      left: calc(75% - 10px);
+    }
+  }
+
+  .form {
+    input {
+      background-color: #eee;
+      height: 25px;
+      padding: 10px;
+      color: $same_blue;
+      display: inline-block;
+      width: 80%;
+      text-align: center;
+      outline: none;
+      border: none;
+    }
+
+    input:first-child {
+      border-bottom: 1px solid #ddd;
+    }
+
+    input::placeholder {
+      color: #aaa;
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 5px 50px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #777;
+  }
+}

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "init": "rm -rf .git && git init && git add . && git commit -m 'init' && ls -alF",
-    "start": "NODE_ENV=dev webpack-dev-server --progress --colors",
+    "start": "NODE_ENV=dev webpack-dev-server --history-api-fallback --progress --colors",
     "build": "rm -rf ./build/* && NODE_ENV=production webpack --config ./webpack.production.config.js --progress --colors"
   },
   "repository": {
@@ -37,12 +37,12 @@
     "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
-    "es6-promise": "^4.1.1",
+    "axios": "^0.16.2",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "react-router": "^2.8.1",
-    "redux": "^3.7.2",
-    "whatwg-fetch": "^2.0.3"
+    "redux": "^3.7.2"
   }
 }

@@ -1,0 +1,41 @@
+@import "../../../static/css/common";
+
+.user-center-setting {
+  div.text-lists {
+    display: block;
+    margin: 0 20px;
+
+    p {
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(238, 238, 238, 0.5);
+    }
+
+    p.logout {
+      text-align: center;
+      color: red;
+    }
+  }
+
+  div.copyright {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: #eee;
+    p.logo {
+      color: #aaa;
+      font-family: Palatino, “Palatino LT STD”, “Palatino Linotype”, “Book Antiqua”, Georgia, serif;
+      font-size: 2em;
+      font-weight: 900;
+      text-shadow: 0 0 1px $light_sky;
+    }
+
+    p.copyright {
+      color: #bbb;
+      font-size: 0.7em;
+      a {
+        color: #bbb;
+        text-decoration: none;
+      }
+    }
+  }
+}

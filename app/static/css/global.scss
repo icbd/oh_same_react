@@ -1,1 +1,39 @@
-// Global style
+@import "common";
+
+// 控制主内容区域宽度
+@mixin keep_main_body_width {
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+  @media all and (min-width: 768px) {
+    // 大屏幕条状显示
+    width: $main_body_width;
+  }
+}
+
+body {
+  background-color: #eee;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+
+  @media all and (min-width: 768px) {
+    // 大屏幕条状显示, 四周浅天蓝色
+    background-color: $light_sky;
+  }
+}
+
+#root {
+  @include keep_main_body_width;
+  background-color: #FFF;
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+[data-reactroot] {
+  flex: 1;
+  display: block;
+  margin-top: $topbarHeight;
+  background-color: white;
+}
