@@ -1,0 +1,103 @@
+@import "../../static/css/common";
+
+.create-channel {
+  div.intimity, div.explanation, div.comment_type {
+    background-color: white;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 15px 0;
+    }
+  }
+
+  div.explanation {
+    margin-bottom: 120px;
+
+    div.explanation-next {
+      background-color: white;
+      position: fixed;
+      display: block;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      text-align: center;
+
+      box-shadow: 0 0 10px $same_blue;
+
+      p.know {
+        color: #999;
+        padding: 5px 0;
+      }
+
+      p.next {
+        height: $topbarHeight;
+        line-height: $topbarHeight;
+        font-size: $topbarHeight * 0.5;
+        color: $same_blue;
+      }
+    }
+  }
+
+  .channel_type {
+
+    .channel_type-item {
+      padding: 15px 0;
+      background-color: white;
+      border-bottom: 1px solid rgba(238, 238, 238, 0.5);
+      img {
+        display: inline-block;
+        width: $channelItemHeight;
+        height: $channelItemHeight;
+        padding: 0 15px;
+      }
+
+      span {
+        height: $channelItemHeight;
+        line-height: $channelItemHeight;
+        color: #777;
+        font-size: $channelItemHeight * 0.4;
+        padding-right: 15px;
+      }
+    }
+  }
+
+  .title {
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    div.form {
+      display: block;
+      width: 100%;
+      margin-top: 30px;
+
+      input, textarea {
+        background-color: white;
+        display: block;
+        color: #777;
+        outline: none;
+        border: none;
+        padding: 10px;
+        margin: 10px 30px;
+        width: calc(100% - 80px);
+
+        box-shadow: 0 0 1px #eee;
+      }
+
+      input::placeholder, textarea::placeholder {
+        color: #eee;
+      }
+    }
+
+    .submit {
+      text-align: center;
+      display: block;
+      width: 100%;
+      margin-top: 30px;
+      line-height: $topbarHeight;
+      font-size: $topbarHeight * 0.4;
+    }
+  }
+}

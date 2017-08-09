@@ -1,6 +1,7 @@
 import "./style.scss";
 
 import React from "react";
+import {History} from "../../../router/history";
 
 //import {connect} from "react-redux";
 
@@ -14,9 +15,14 @@ class _TopBar extends React.Component {
             <div className="topbar clearfix channel-list-top-bar">
                 <div className="title"><span className="title">{this.props.title || "关注频道"}</span></div>
 
-                <span className="fr icon create">创建频道</span>
+                <span className="fr icon create"
+                      onClick={this.gotoCreateChannelHandler.bind(this)}>创建频道</span>
             </div>
         );
+    }
+
+    gotoCreateChannelHandler() {
+        History.push("/Channel/Create");
     }
 }
 

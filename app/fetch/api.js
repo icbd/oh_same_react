@@ -10,4 +10,6 @@ export const APIs = {
     "auth_uptoken": pre + "/auth/uptoken",
 
     "users": pre + "/users/",
+
+    "channel_create": pre + "/channels",
 };

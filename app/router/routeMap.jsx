@@ -11,6 +11,7 @@ import UserCenter_Setting from "../containers/UserCenter/Setting";
 import AboutPage from "../components/AboutPage/index";
 import SetInfo from "../containers/UserCenter/Setting/SetInfo/index";
 import Channel from "../containers/ChannelList/Channel/index";
+import CreateChannel from "../containers/CreateChannel/index";
 
 class routeMap extends React.Component {
     constructor(props, context) {
@@ -30,7 +31,8 @@ class routeMap extends React.Component {
 
 
                     <Route path="ChannelList" component={ChannelList}/>
-                    <Route path="Channel/:id" component={Channel}/>
+                    <Route path="Channel/Create" component={CreateChannel}/>{/*注意顺序*/}
+                    <Route path="Channel/:id" component={Channel}/>{/*注意顺序*/}
 
 
                     <Route path="ChatList" component={ChatList}/>

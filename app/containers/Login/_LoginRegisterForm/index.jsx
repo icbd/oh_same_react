@@ -34,7 +34,7 @@ class LoginRegisterForm extends React.Component {
                 </div>
 
                 <div className="form">
-                    <input placeholder="请输入邮箱" autoFocus="autoFocus" type="email"
+                    <input placeholder="请输入邮箱" autoFocus="autofocus" type="email"
                            onChange={this.watchInputEmail.bind(this)}/>
                     <input placeholder="请输入密码" type="password"
                            onChange={this.watchInputPassword.bind(this)}/>
