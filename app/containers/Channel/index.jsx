@@ -6,6 +6,7 @@ import Separation from "../../components/Separation/index";
 import {getChannel} from "../../fetch/channel";
 
 import {connect} from "react-redux";
+import PostsList from "../PostsList/index";
 
 class Channel extends React.Component {
     constructor(props, context) {
@@ -51,9 +52,11 @@ class Channel extends React.Component {
                     <p>{this.state.channelData.description || "无"}</p>
                 </div>
 
+
                 <Separation height="10px"/>
 
-                Channel-{this.state.channelID}
+
+                <PostsList/>
             </div>
         );
     }
