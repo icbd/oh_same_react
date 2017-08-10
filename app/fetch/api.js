@@ -12,4 +12,5 @@ export const APIs = {
     "users": pre + "/users/",
 
     "channel_create": pre + "/channels",
+    "channel_show": pre + "/channels/",
 };

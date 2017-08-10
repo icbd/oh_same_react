@@ -203,8 +203,17 @@ class CreateChannel extends React.Component {
             const data = ans.data;
             if (data.code === 0) {
                 const channel = data.info;
+                let channelDatas = {};
+                channelDatas["channel_" + channel.id] = channel;
 
-                History.push("/Channel/" + channel.id);
+                History.push({
+                    pathname: '/Channel/' + channel.id,
+                    state: channelDatas,
+                });
+
+                // 取用:
+                // this.props.location.state['channel_id']
+
             } else {
                 const errors = data.info;
                 alert(errors.join("\n"));

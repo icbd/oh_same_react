@@ -10,7 +10,7 @@ import UserCenter from "../containers/UserCenter/index.jsx";
 import UserCenter_Setting from "../containers/UserCenter/Setting";
 import AboutPage from "../components/AboutPage/index";
 import SetInfo from "../containers/UserCenter/Setting/SetInfo/index";
-import Channel from "../containers/ChannelList/Channel/index";
+import Channel from "../containers/Channel/index";
 import CreateChannel from "../containers/CreateChannel/index";
 
 class routeMap extends React.Component {
