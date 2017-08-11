@@ -13,4 +13,6 @@ export const APIs = {
 
     "channel_create": pre + "/channels",
     "channel_show": pre + "/channels/",
+
+    "posts_create": pre + "/posts",
 };
