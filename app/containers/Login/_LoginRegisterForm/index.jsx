@@ -7,6 +7,7 @@ import {bindActionCreators} from 'redux';
 import {USER_INFO} from "../../../constants/localStoreKey";
 import {History} from "../../../router/history";
 import "./style.scss";
+import {getUpToken} from "../../../fetch/uptoken";
 
 class LoginRegisterForm extends React.Component {
     constructor(props, context) {
@@ -92,6 +93,8 @@ class LoginRegisterForm extends React.Component {
                 const userInfo = data.info;
                 this.props.userInfoActions.update(userInfo);
                 LocalStore.setItem(USER_INFO, JSON.stringify(userInfo));
+
+                const upToken = getUpToken();
 
                 History.push('/');
             } else {

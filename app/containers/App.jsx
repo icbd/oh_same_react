@@ -7,13 +7,14 @@ import {History} from "../router/history";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as userInfoActionsBindToReact from '../actions/userinfo.js';
+import {setUpToken} from "../fetch/uptoken";
 
 class App extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
             initDone: false,
-        }
+        };
     }
 
     render() {
@@ -54,11 +55,12 @@ class App extends React.Component {
                 const data = ans.data;
                 if (data.code !== 0) {
                     History.push('/Login');
+                } else {
+                    const upToken = setUpToken();
                 }
             }).catch(ans => {
                 alert("网络波动, 刷新试试");
             });
-
         }
     }
 }

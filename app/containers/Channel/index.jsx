@@ -7,6 +7,7 @@ import {getChannel} from "../../fetch/channel";
 
 import {connect} from "react-redux";
 import PostsList from "../PostsList/index";
+import _CreatePosts from "./_CreatePosts/index";
 
 class Channel extends React.Component {
     constructor(props, context) {
@@ -57,12 +58,14 @@ class Channel extends React.Component {
 
 
                 <PostsList/>
+
+
+                <_CreatePosts channelID={this.state.channelID}/>
             </div>
         );
     }
 
     fetchChannelData() {
-        console.log('fetchChannelData');
         const userInfo = this.props.userInfo;
         const promise = getChannel(userInfo.login_token, userInfo.id, this.state.channelID);
         promise.then(ans => {
@@ -90,9 +93,6 @@ class Channel extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        console.log(newProps.params.id);
-        console.log(this.state.channelID);
-
         const newID = parseInt(newProps.params.id);
         const oldID = parseInt(this.state.channelID);
         if (newID !== oldID) {
