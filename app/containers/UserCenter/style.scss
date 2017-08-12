@@ -1,3 +1,29 @@
+@import "../../static/css/common";
+
 .user-center-page {
 
+}
+
+.time-or-channel {
+  color: #999;
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(238, 238, 238, 0.5);
+  span {
+    height: $topbarHeight;
+    line-height: $topbarHeight;
+    font-size: $topbarHeight * 0.28;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 50%;
+
+    &:first-child {
+      border-right: 1px solid rgba(238, 238, 238, 0.5);
+    }
+  }
+
+  span.actived {
+    color: $same_blue;
+  }
 }
