@@ -1,9 +1,12 @@
 @import "../../../static/css/common";
+@import "../../../static/css/global";
 
+$create_post_bgc: rgb(245, 245, 245);
 .create-posts {
-  background-color: #eee;
-  position: absolute;
-  left: 0;
+  @include keep_main_body_width;
+  background-color: $create_post_bgc;
+  position: fixed;
+  display: inline-block;
   bottom: 0;
   width: 100%;
 
@@ -24,7 +27,7 @@
   }
 
   input {
-    background-color: #eee;
+    background-color: $create_post_bgc;
     height: $topbarHeight;
     line-height: $topbarHeight;
     color: #777;

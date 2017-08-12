@@ -219,7 +219,8 @@ class CreateChannel extends React.Component {
                 alert(errors.join("\n"));
             }
         }).catch(ex => {
-            console.log(ex);
+            console.warn(ex);
+            console.warn("create channel err.");
         });
     }
 }

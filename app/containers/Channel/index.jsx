@@ -6,7 +6,7 @@ import Separation from "../../components/Separation/index";
 import {getChannel} from "../../fetch/channel";
 
 import {connect} from "react-redux";
-import PostsList from "../PostsList/index";
+import PostsListOfChannel from "../PostsListOfChannel/index";
 import _CreatePosts from "./_CreatePosts/index";
 
 class Channel extends React.Component {
@@ -57,7 +57,7 @@ class Channel extends React.Component {
                 <Separation height="10px"/>
 
 
-                <PostsList/>
+                <PostsListOfChannel channelID={this.state.channelID}/>
 
 
                 <_CreatePosts channelID={this.state.channelID}/>
@@ -74,7 +74,6 @@ class Channel extends React.Component {
                 this.setState({
                     channelData: Object.assign({}, data.info),
                 });
-                console.log(this.state.channelData);
             } else {
                 const errors = data.info;
                 alert(errors.join("\n"))

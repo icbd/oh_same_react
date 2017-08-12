@@ -4,15 +4,27 @@
 const pre = __DEV__ ? "/api" : "/api";
 
 export const APIs = {
-    "auth_register": pre + "/auth/register",
-    "auth_login": pre + "/auth/login",
-    "auth_auth": pre + "/auth/auth",
-    "auth_uptoken": pre + "/auth/uptoken",
+    "auth_register": pre + "/auth/register",// POST /auth/register
+    "auth_login": pre + "/auth/login",      // POST /auth/login
+    "auth_auth": pre + "/auth/auth",        // POST /auth/auth
+    "auth_uptoken": pre + "/auth/uptoken",  // POST /auth/uptoken
 
-    "users": pre + "/users/",
+    "users": pre + "/users/",               // PATCH /users/:id
 
-    "channel_create": pre + "/channels",
-    "channel_show": pre + "/channels/",
+    "channel_index": pre + '/channels',     // GET /channels
+    "channel_create": pre + "/channels",    // POST /channels
+    "channel_show": pre + "/channels/",     // GET  /channels/:id
+    "channel_posts": pre + "/channels/",    // GET /channels/:id/posts
 
-    "posts_create": pre + "/posts",
+    "posts_create": pre + "/posts",         // POST /posts
 };
+
+
+// 组装查询字符串
+export function queryString(mapObj) {
+    return '?' +
+        Object.keys(mapObj).map(key => {
+                return encodeURIComponent(key) + '=' + encodeURIComponent(mapObj[key]);
+            }
+        ).join('&');
+}

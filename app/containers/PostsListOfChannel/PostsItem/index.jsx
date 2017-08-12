@@ -2,6 +2,8 @@ import "./style.scss";
 
 import React from "react";
 import Separation from "../../../components/Separation/index";
+import PropsType from "prop-types";
+import {showDateDiff} from "../../../util/time";
 
 //import {connect} from "react-redux";
 
@@ -11,26 +13,24 @@ class PostsItem extends React.Component {
     }
 
     render() {
+        const posts = this.props.posts;
+        const user = posts.user;
+
         return (
             <div className="posts-item">
 
                 <div className="top clearfix">
-                    <img src="/assets/favicon.ico" className="avatar fl"/>
+                    <img src={user.avatar || "/assets/favicon.ico"} className="avatar fl"/>
                     <div className="user fl">
-                        <p className="name">username</p>
-                        <p className="time">time</p>
+                        <p className="name">{user.name}</p>
+                        <p className="time">{showDateDiff(posts.created_at)}</p>
                     </div>
                     <span className="func fr"><i className="fa fa-ellipsis-h"/></span>
                 </div>
 
 
                 <div className="content">
-                    <p className="text-type">
-                        text-type 正文text-type 正文text-type 正文text-type 正文text-type 正文text-type 正文text-type 正文text-type
-                        正文text-type 正文text-type 正文text-type 正文text-type 正文text-type 正文text-type 正text-type 正文text-type
-                        正文text-type 正文text-type 正文text-type 正文text-type 正文text-type 正文text-type 正文text-type 正文text-type
-                        正文text-type 正文text-type 正文text-type 正文text-type 正text-type 正文text-type 正文text-type 正文text-type
-                    </p>
+                    <p className="text-type">{posts.content || ''}</p>
                 </div>
 
 
@@ -38,11 +38,11 @@ class PostsItem extends React.Component {
                     <div className="count fl">
                         <div className="same-count">
                             <span><i className="fa fa-heart"/></span>
-                            <span>123</span>
+                            <span>{posts.same_count}</span>
                         </div>
                         <div className="show-count">
                             <span><i className="fa fa-eye"/></span>
-                            <span>1234</span>
+                            <span>{posts.view_count}</span>
                         </div>
                     </div>
                     <div className="interact fr">
@@ -60,6 +60,10 @@ class PostsItem extends React.Component {
     }
 }
 
+
+PostsItem.propsType = {
+    posts: PropsType.object.isRequired,
+};
 // /* ---------- Redux bind React ---------- */
 // function mapStateToProps(state) {return {}}
 // function mapDispatchToProps(dispatch) {return {}}

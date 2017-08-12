@@ -9,11 +9,13 @@ import {History} from "../../router/history";
 class ChannelItem extends React.Component {
     constructor(props, context) {
         super(props, context);
+
+        this.clickHandler = this.clickHandler.bind(this);
     }
 
     render() {
         return (
-            <div className="channel-item clearfix" onClick={this.clickHandler.bind(this)}>
+            <div className="channel-item clearfix" onClick={this.clickHandler}>
                 <img className="icon fl" src={this.props.icon || "/assets/same/ChanneDefaultIcon_160x160_@3x.png"}/>
 
                 <span className="title fl">{this.props.title}</span>

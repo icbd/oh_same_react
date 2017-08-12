@@ -19,7 +19,7 @@ function resetToken() {
             alert(data.info.join("\n"));
         }
     }).catch(ans => {
-        console.log(ans);
+        console.warn(ans);
         alert("网络波动, 刷新试试!");
     });
 
@@ -62,7 +62,7 @@ export function getUpToken(func) {
                 alert(data.info.join("\n"));
             }
         }).catch(ans => {
-            console.log(ans);
+            console.warn(ans);
             alert("网络波动, 刷新试试!");
         });
     }

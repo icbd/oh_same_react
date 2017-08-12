@@ -59,15 +59,13 @@ class _CreatePosts extends React.Component {
             if (data.code === 0) {
 
                 const newPosts = data.info;
-                console.log('newPosts');
-                console.log(newPosts);
-
             } else {
                 alert(data.info.join("\n"));
             }
 
         }).catch(ex => {
-            console.log("create posts error.");
+            console.warn(ex);
+            console.warn("create posts error.");
         });
     }
 
