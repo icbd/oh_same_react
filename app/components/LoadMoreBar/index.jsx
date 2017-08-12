@@ -45,7 +45,6 @@ class LoadMoreBar extends React.Component {
 
         // 阻尼回调
         function dampCallback() {
-            console.debug('dampCallback');
             const top = loadMoreDiv.getBoundingClientRect().top;
             const windowHeight = window.screen.height;
             if (top && top < (windowHeight * 2)) {

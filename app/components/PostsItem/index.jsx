@@ -1,11 +1,9 @@
 import "./style.scss";
 
 import React from "react";
-import Separation from "../../../components/Separation/index";
+import Separation from "../Separation/index";
 import PropsType from "prop-types";
-import {showDateDiff} from "../../../util/time";
-
-//import {connect} from "react-redux";
+import {showDateDiff} from "../../util/time";
 
 class PostsItem extends React.Component {
     constructor(props, context) {

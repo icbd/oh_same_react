@@ -1,8 +1,7 @@
 import "./style.scss";
 
 import React from "react";
-import ReactDOM from "react-dom";
-import PostsItem from "./PostsItem/index";
+import PostsItem from "../../components/PostsItem/index";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {getChannelPosts} from "../../fetch/channel";
@@ -61,7 +60,6 @@ class PostsListOfChannel extends React.Component {
         const promise = getChannelPosts(userInfo.login_token, userInfo.id, this.props.channelID, page, per_page);
         promise.then(ans => {
             const data = ans.data;
-            console.debug(data);
             if (data.code === 0) {
                 const total = data.info.total;
                 const list = data.info.list;

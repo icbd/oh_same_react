@@ -59,32 +59,6 @@ class ChannelList extends React.Component {
     }
 
 
-    // componentDidMount() {
-    //     this.loadMoreChannel();
-    // }
-    //
-    //
-    // loadMoreChannel() {
-    //     const page = this.state.page;
-    //     const per_page = this.state.per_page;
-    //
-    //     const promise = getChannelsIndex(page, per_page);
-    //     promise.then(ans => {
-    //         const data = ans.data;
-    //         if (data.code === 0) {
-    //             this.setState({
-    //                 page: page + 1,
-    //                 list: this.state.list.concat(data.info.list),
-    //                 total: data.info.total,
-    //             })
-    //         } else {
-    //             alert(data.info.join("\n"));
-    //         }
-    //     }).catch(ex => {
-    //         console.warn(ex);
-    //     })
-    // }
-
     componentDidMount() {
         this.loadMore();
     }
@@ -100,7 +74,6 @@ class ChannelList extends React.Component {
         const promise = getChannelsIndex(userInfo.login_token, userInfo.id, this.props.channelID, page, per_page);
         promise.then(ans => {
             const data = ans.data;
-            console.debug(data);
             if (data.code === 0) {
                 const total = data.info.total;
                 const list = data.info.list;
