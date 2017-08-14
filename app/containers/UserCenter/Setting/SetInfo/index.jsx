@@ -51,7 +51,7 @@ class SetInfo extends React.Component {
                     <img className="avatar" src={this.props.userInfo.avatar || "/assets/favicon.ico"} id="avatarImg"/>
 
                     <div className="camera" id="avatarCamera">
-                        <div className="camera-inner"><i className="fa fa-camera"/></div>
+                        <div className="camera-inner" id="avatarCameraInner"><i className="fa fa-camera"/></div>
                     </div>
                 </div>
 
@@ -82,8 +82,8 @@ class SetInfo extends React.Component {
         const that = this;
         getUpToken(function (upToken) {
             var uploader = Qiniu.uploader({
-                browse_button: 'avatarCamera',         // 上传选择的点选按钮，必需
-                container: 'avatarImg',             // 上传区域DOM ID，默认是browser_button的父元素
+                browse_button: 'avatarCameraInner',         // 上传选择的点选按钮，必需
+                container: 'avatarCamera',             // 上传区域DOM ID，默认是browser_button的父元素
 
                 uptoken: upToken, // uptoken是上传凭证，由其他程序生成
                 runtimes: 'html5,html4',      // 上传模式，依次退化
@@ -94,7 +94,7 @@ class SetInfo extends React.Component {
                 max_file_size: '3mb',             // 最大文件体积限制
                 max_retries: 2,                     // 上传失败最大重试次数
                 dragdrop: false,                     // 开启可拖曳上传
-                // drop_element: 'avatarImg',          // 拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
+                // drop_element: 'avatarCamera',          // 拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
                 chunk_size: '3mb',                  // 分块上传时，每块的体积
                 auto_start: true,                   // 选择文件后自动上传，若关闭需要自己绑定事件触发上传
                 multi_selection: false,             // 设置一次只能选择一个文件
