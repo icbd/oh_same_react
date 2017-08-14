@@ -20,7 +20,7 @@ class _CreatePosts extends React.Component {
 
     render() {
         return (
-            <div className="create-posts clearfix">
+            <div className="create-posts clearfix" id="create_posts_div">
 
                 <div id="createPostsCamera" className="fl"><span id="createPostsCameraSpan"><i
                     className="fa fa-camera"/></span></div>
@@ -29,11 +29,22 @@ class _CreatePosts extends React.Component {
                        type="text"
                        placeholder="有什么新鲜事?"
                        value={this.state.content}
+                       onFocus={this.onFocusHandler.bind(this)}
+                       onBlur={this.onBlueHandler.bind(this)}
                        onChange={this.inputHandle.bind(this)}/>
 
                 <span className="fr" onClick={this.createPostsHandler.bind(this)}>发布</span>
             </div>
         );
+    }
+
+    onFocusHandler() {
+        document.getElementById('create_posts_div').style.paddingBottom = "100px";
+    }
+
+
+    onBlueHandler() {
+        document.getElementById('create_posts_div').style.paddingBottom = "0";
     }
 
     inputHandle(e) {

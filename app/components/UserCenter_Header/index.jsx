@@ -10,8 +10,8 @@ class UserCenter_Header extends React.Component {
         super(props, context);
 
         this.state = {
-            content_count: 0,
-            channel_count: 0,
+            posts_count: 0,
+            channels_count: 0,
             join_time: "",
         }
     }
@@ -24,8 +24,8 @@ class UserCenter_Header extends React.Component {
 
                 <div className="info">
                     <div className="count">
-                        <span>内容数<span className="number">{this.state.content_count}</span></span>
-                        <span>频道数<span className="number">{this.state.channel_count}</span></span>
+                        <span>内容数<span className="number">{this.state.posts_count}</span></span>
+                        <span>频道数<span className="number">{this.state.channels_count}</span></span>
                     </div>
 
                     <p className="join-time">{this.state.join_time} 加入</p>
@@ -38,13 +38,13 @@ class UserCenter_Header extends React.Component {
         const user = this.props.userInfo;
 
         const join_time = ("" + user.created_at).slice(0, 10) || "";
-        const channel_count = user.channel_count || 0;
-        const content_count = user.content_count || 0;
+        const channels_count = user.channels_count || 0;
+        const posts_count = user.posts_count || 0;
 
         this.setState({
             join_time,
-            channel_count,
-            content_count,
+            channels_count,
+            posts_count,
         });
     };
 }
