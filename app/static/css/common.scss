@@ -40,7 +40,7 @@ $topbarHeight: 45px;
   }
 
   span.icon {
-    font-size: $topbarHeight / 2;
+    font-size: $topbarHeight * 0.5;
     margin-right: 10px;
     margin-left: 10px;
   }

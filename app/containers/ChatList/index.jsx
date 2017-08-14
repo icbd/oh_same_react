@@ -1,5 +1,7 @@
 import React from "react";
 import TabBar from "../../components/TabBar";
+import _TopBar from "./_TopBar";
+import Separation from "../../components/Separation/index";
 
 //import "./style.scss";
 
@@ -10,7 +12,10 @@ class ChatList extends React.Component {
 
     render() {
         return (
-            <div>ChatList
+            <div>
+                <_TopBar/>
+
+                <Separation/>
 
                 <TabBar activedAt="3"/>
             </div>
