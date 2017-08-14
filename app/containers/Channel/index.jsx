@@ -93,7 +93,6 @@ class Channel extends React.Component {
 
     componentWillReceiveProps(newProps) {
         // 直接修改ID, 刷新数据
-        console.debug('newProps', newProps);
         const newID = parseInt(newProps.params.id);
         const oldID = parseInt(this.state.channelID);
 

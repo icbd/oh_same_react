@@ -16,8 +16,6 @@ class PostsListOfChannel extends React.Component {
         this.state = Object.assign({
             channelID: channelID,
         }, LoadMoreBar.getLoadMoreStateTmp());
-
-        console.debug('constructor', this.state);
     }
 
 
