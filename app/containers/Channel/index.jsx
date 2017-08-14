@@ -37,7 +37,9 @@ class Channel extends React.Component {
 
         this.state = {
             channelID: channelID,
-            channelData: channelData,// 简介信息
+            channelData: channelData,       // 简介信息
+
+            createdPosts: undefined         // 新创建好的一条帖子
         };
 
     }
@@ -57,12 +59,23 @@ class Channel extends React.Component {
                 <Separation height="10px"/>
 
 
-                <PostsListOfChannel channelID={this.state.channelID}/>
+                <PostsListOfChannel channelID={this.state.channelID} createdPosts={this.state.createdPosts}/>
 
 
-                <_CreatePosts channelID={this.state.channelID}/>
+                <_CreatePosts channelID={this.state.channelID}
+                              createdPostsCallBack={this.createdPostsCallBack.bind(this)}/>
             </div>
         );
+    }
+
+    createdPostsCallBack(newPosts) {
+        const userInfo = this.state.userInfo;
+
+        if (newPosts.id) {
+            this.setState({
+                createdPosts: newPosts
+            })
+        }
     }
 
     fetchChannelData() {

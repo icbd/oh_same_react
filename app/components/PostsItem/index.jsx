@@ -14,6 +14,30 @@ class PostsItem extends React.Component {
         const posts = this.props.posts;
         const user = posts.user;
 
+        let attachmentDiv = "";
+        switch (posts.attach_type) {
+            case 0://图文
+                attachmentDiv = <img src={posts.attachment}/>;
+                break;
+            case 1://纯文
+                break;
+            case 2://语音
+                break;
+            case 3://音乐
+                break;
+            case 4://电影
+                break;
+            case 5://打卡
+                break;
+            case 6://视频
+                break;
+            case 7://投票
+                break;
+            default:
+                break;
+        }
+
+
         return (
             <div className="posts-item">
 
@@ -26,6 +50,7 @@ class PostsItem extends React.Component {
                     <span className="func fr"><i className="fa fa-ellipsis-h"/></span>
                 </div>
 
+                <div className="attachment">{attachmentDiv}</div>
 
                 <div className="content">
                     <p className="text-type">{posts.content || ''}</p>

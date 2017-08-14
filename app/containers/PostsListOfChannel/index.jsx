@@ -27,6 +27,14 @@ class PostsListOfChannel extends React.Component {
             <div className="posts-list" id="postsList">
 
                 {
+                    this.props.createdPosts
+                        ?
+                        <PostsItem posts={this.props.createdPosts}/>
+                        :
+                        ''
+                }
+
+                {
                     list.map(posts => {
                         return (
                             <PostsItem key={posts.id} posts={posts}/>

@@ -14,7 +14,7 @@ class _CreatePosts extends React.Component {
         this.state = {
             content: "",
             uploader: undefined,
-            attach: "",
+            attach: undefined,
         }
     }
 
@@ -25,7 +25,11 @@ class _CreatePosts extends React.Component {
                 <div id="createPostsCamera" className="fl"><span id="createPostsCameraSpan"><i
                     className="fa fa-camera"/></span></div>
 
-                <input className="fl" type="text" placeholder="有什么新鲜事?" onChange={this.inputHandle.bind(this)}/>
+                <input className="fl"
+                       type="text"
+                       placeholder="有什么新鲜事?"
+                       value={this.state.content}
+                       onChange={this.inputHandle.bind(this)}/>
 
                 <span className="fr" onClick={this.createPostsHandler.bind(this)}>发布</span>
             </div>
@@ -46,11 +50,16 @@ class _CreatePosts extends React.Component {
 
         const channelID = this.props.channelID;
         const userInfo = this.props.userInfo;
+        const attachment = this.state.attach;
+        let attach_type = 1;    //默认仅文字
+        if (attachment) {
+            attach_type = 0; // 图片
+        }
         const posts = {
             channel_id: channelID,
             content: content,
-            attachment: JSON.stringify([1, 2, 3]),
-            attach_type: 0,
+            attachment: attachment,
+            attach_type: attach_type,
         };
 
         const promise = createPosts(userInfo.login_token, userInfo.id, posts);
@@ -59,7 +68,15 @@ class _CreatePosts extends React.Component {
             if (data.code === 0) {
 
                 const newPosts = data.info;
-                //todo
+                this.props.createdPostsCallBack(newPosts);
+
+                // 清空输入框
+                this.setState({
+                    content: "",
+                    attach: "",
+                });
+
+                alert("发布成功");
 
             } else {
                 alert(data.info.join("\n"));
@@ -93,7 +110,7 @@ class _CreatePosts extends React.Component {
                 multi_selection: false,             // 设置一次只能选择一个文件
                 filters: {
                     mime_types: [
-                        {title: "Image files", extensions: "jpg,jpeg,gif,png,mp4,mp3,m4a"}
+                        {title: "Image files", extensions: "jpg,jpeg,gif,png"}
                     ]
                 },
                 init: {
@@ -134,6 +151,7 @@ class _CreatePosts extends React.Component {
 
 _CreatePosts.propTypes = {
     channelID: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    createdPostsCallBack: PropTypes.func.isRequired,
 };
 
 /* ---------- Redux bind React ---------- */
