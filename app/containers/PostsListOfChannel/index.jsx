@@ -22,16 +22,17 @@ class PostsListOfChannel extends React.Component {
     render() {
         const total = this.state.total;
         const list = this.state.list;
+        const createdPosts = this.props.createdPosts || [];
 
         return (
             <div className="posts-list" id="postsList">
 
                 {
-                    this.props.createdPosts
-                        ?
-                        <PostsItem posts={this.props.createdPosts}/>
-                        :
-                        ''
+                    createdPosts.map(posts => {
+                        if (posts) {
+                            return <PostsItem key={posts.id} posts={posts}/>
+                        }
+                    })
                 }
 
                 {

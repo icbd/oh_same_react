@@ -39,7 +39,7 @@ class Channel extends React.Component {
             channelID: channelID,
             channelData: channelData,       // 简介信息
 
-            createdPosts: undefined         // 新创建好的一条帖子
+            createdPosts: []         // 新创建好的一条帖子(或多条)
         };
 
     }
@@ -73,7 +73,7 @@ class Channel extends React.Component {
 
         if (newPosts.id) {
             this.setState({
-                createdPosts: newPosts
+                createdPosts: [newPosts].concat(this.state.createdPosts)
             })
         }
     }
