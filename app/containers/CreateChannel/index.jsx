@@ -59,37 +59,37 @@ class CreateChannel extends React.Component {
 
                 <div className="channel_type-item clearfix" onClick={this.channeltypeClickHandler.bind(this, 2)}>
                     <img src="/assets/same/SearchCateVoice_24x24_@3x.png" className="fl"/>
-                    <span className="typename fl">语音频道</span>
+                    <span className="typename fl">语音频道(开发中)</span>
                     <span className="fr"><i className="fa fa-chevron-right"/></span>
                 </div>
 
                 <div className="channel_type-item clearfix" onClick={this.channeltypeClickHandler.bind(this, 3)}>
                     <img src="/assets/same/SearchCateMusic_24x24_@3x.png" className="fl"/>
-                    <span className="typename fl">音乐频道</span>
+                    <span className="typename fl">音乐频道(开发中)</span>
                     <span className="fr"><i className="fa fa-chevron-right"/></span>
                 </div>
 
                 <div className="channel_type-item clearfix" onClick={this.channeltypeClickHandler.bind(this, 4)}>
                     <img src="/assets/same/SearchCateMovie_24x24_@3x.png" className="fl"/>
-                    <span className="typename fl">电影频道</span>
+                    <span className="typename fl">电影频道(开发中)</span>
                     <span className="fr"><i className="fa fa-chevron-right"/></span>
                 </div>
 
                 <div className="channel_type-item clearfix" onClick={this.channeltypeClickHandler.bind(this, 5)}>
                     <img src="/assets/same/SearchCateCart_24x24_@3x.png" className="fl"/>
-                    <span className="typename fl">打卡频道</span>
+                    <span className="typename fl">打卡频道(开发中)</span>
                     <span className="fr"><i className="fa fa-chevron-right"/></span>
                 </div>
 
                 <div className="channel_type-item clearfix" onClick={this.channeltypeClickHandler.bind(this, 6)}>
                     <img src="/assets/same/video@3x.png" className="fl"/>
-                    <span className="typename fl">视频频道</span>
+                    <span className="typename fl">视频频道(开发中)</span>
                     <span className="fr"><i className="fa fa-chevron-right"/></span>
                 </div>
 
                 <div className="channel_type-item clearfix" onClick={this.channeltypeClickHandler.bind(this, 7)}>
                     <img src="/assets/same/SearchCateVote_24x24_@3x.png" className="fl"/>
-                    <span className="typename fl">投票频道</span>
+                    <span className="typename fl">投票频道(开发中)</span>
                     <span className="fr"><i className="fa fa-chevron-right"/></span>
                 </div>
 
@@ -158,6 +158,10 @@ class CreateChannel extends React.Component {
     }
 
     channeltypeClickHandler(channel_type) {
+        if (channel_type > 1) {
+            alert("功能开发中, 敬请期待");
+            return false;
+        }
         const currentStep = this.state.currentStep;
         this.setState({
             channel_type: channel_type,

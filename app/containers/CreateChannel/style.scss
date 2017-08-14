@@ -1,4 +1,5 @@
 @import "../../static/css/common";
+@import "../../static/css/global";
 
 .create-channel {
   div.intimity, div.explanation, div.comment_type {
@@ -15,11 +16,11 @@
     margin-bottom: 120px;
 
     div.explanation-next {
+      @include keep_main_body_width;
       background-color: white;
       position: fixed;
       display: block;
       width: 100%;
-      left: 0;
       bottom: 0;
       text-align: center;
 

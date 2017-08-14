@@ -59,6 +59,8 @@ class _CreatePosts extends React.Component {
             if (data.code === 0) {
 
                 const newPosts = data.info;
+                //todo
+
             } else {
                 alert(data.info.join("\n"));
             }
