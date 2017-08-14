@@ -11,15 +11,15 @@ class PostsListOfChannel extends React.Component {
     constructor(props, context) {
         super(props, context);
 
-        this.state = {
-            total: 0,
-            list: [],
-            page: 1,
-            per_page: 5,
-            isLoading: false,
-            loadOver: false,
-        };
+        const channelID = parseInt(this.props.channelID);
+
+        this.state = Object.assign({
+            channelID: channelID,
+        }, LoadMoreBar.getLoadMoreStateTmp());
+
+        console.debug('constructor', this.state);
     }
+
 
     render() {
         const total = this.state.total;
@@ -45,6 +45,22 @@ class PostsListOfChannel extends React.Component {
         );
     }
 
+    componentWillReceiveProps(newProps) {
+        // 直接修改ID, 刷新数据
+        const newID = parseInt(newProps.channelID);
+        const oldID = parseInt(this.state.channelID);
+
+        if (newID !== oldID) {
+            this.setState({
+                channelID: newID,
+                page: 1,
+                list: [],
+            }, function () {
+                this.loadMore();
+            });
+        }
+    }
+
     componentDidMount() {
         this.loadMore();
     }
@@ -57,7 +73,7 @@ class PostsListOfChannel extends React.Component {
         const page = this.state.page;
         const per_page = this.state.per_page;
         const userInfo = this.props.userInfo;
-        const promise = getChannelPosts(userInfo.login_token, userInfo.id, this.props.channelID, page, per_page);
+        const promise = getChannelPosts(userInfo.login_token, userInfo.id, this.state.channelID, page, per_page);
         promise.then(ans => {
             const data = ans.data;
             if (data.code === 0) {

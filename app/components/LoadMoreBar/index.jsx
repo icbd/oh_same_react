@@ -3,6 +3,17 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class LoadMoreBar extends React.Component {
+    static getLoadMoreStateTmp() {
+        return {
+            total: 0,
+            list: [],
+            page: 1,
+            per_page: 5,
+            isLoading: false,
+            loadOver: false,
+        }
+    }
+
     constructor(props, context) {
         super(props, context);
     }

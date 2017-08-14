@@ -11,14 +11,7 @@ class UserChannels extends React.Component {
     constructor(props, context) {
         super(props, context);
 
-        this.state = {
-            total: 0,
-            list: [],
-            page: 1,
-            per_page: 5,
-            isLoading: false,
-            loadOver: false,
-        };
+        this.state = Object.assign({}, LoadMoreBar.getLoadMoreStateTmp());
     }
 
     render() {

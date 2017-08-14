@@ -37,7 +37,7 @@ class Channel extends React.Component {
 
         this.state = {
             channelID: channelID,
-            channelData: channelData,
+            channelData: channelData,// 简介信息
         };
 
     }
@@ -92,13 +92,21 @@ class Channel extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
+        // 直接修改ID, 刷新数据
+        console.debug('newProps', newProps);
         const newID = parseInt(newProps.params.id);
         const oldID = parseInt(this.state.channelID);
+
         if (newID !== oldID) {
             this.setState({
-                channelID: newID
-            });
-            this.fetchChannelData();
+                    channelID: newID,
+                    channelData: {}
+                },
+
+                function () {
+                    this.fetchChannelData();
+                }
+            );
         }
     }
 }
