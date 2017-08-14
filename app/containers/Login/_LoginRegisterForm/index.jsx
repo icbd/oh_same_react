@@ -7,6 +7,7 @@ import {bindActionCreators} from 'redux';
 import {USER_INFO} from "../../../constants/localStoreKey";
 import {History} from "../../../router/history";
 import "./style.scss";
+import {getUpToken} from "../../../fetch/uptoken";
 
 class LoginRegisterForm extends React.Component {
     constructor(props, context) {
@@ -34,7 +35,7 @@ class LoginRegisterForm extends React.Component {
                 </div>
 
                 <div className="form">
-                    <input placeholder="请输入邮箱" autoFocus="autoFocus" type="email"
+                    <input placeholder="请输入邮箱" autoFocus="autofocus" type="email"
                            onChange={this.watchInputEmail.bind(this)}/>
                     <input placeholder="请输入密码" type="password"
                            onChange={this.watchInputPassword.bind(this)}/>
@@ -93,13 +94,16 @@ class LoginRegisterForm extends React.Component {
                 this.props.userInfoActions.update(userInfo);
                 LocalStore.setItem(USER_INFO, JSON.stringify(userInfo));
 
+                const upToken = getUpToken();
+
                 History.push('/');
             } else {
                 const errors = data.info;
                 alert(errors.join("\n"));
             }
         }).catch(ex => {
-            console.log(ex);
+            console.warn(ex);
+            console.warn("login register form err.");
         });
     }
 

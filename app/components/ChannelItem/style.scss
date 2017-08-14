@@ -1,0 +1,32 @@
+@import "../../static/css/common";
+
+.channel-item {
+  padding: 5px 15px;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.5);
+
+  background-color: white;
+
+  .icon {
+    width: $channelItemHeight;
+    height: $channelItemHeight;
+    border-radius: 50%;
+  }
+
+  span {
+    height: $channelItemHeight;
+    line-height: $channelItemHeight;
+    font-size: $channelItemHeight * 0.36;
+  }
+
+  .title {
+    padding-left: 15px;
+    max-width: calc(95% - 100px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .count {
+    color: $same_blue;
+  }
+}

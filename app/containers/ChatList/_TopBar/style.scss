@@ -1,0 +1,23 @@
+@import "../../../static/css/common";
+
+.chat-page-top-bar {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: $topbarHeight;
+  text-align: center;
+
+  span {
+    height: $topbarHeight;
+    line-height: $topbarHeight;
+    font-size: $topbarHeight * 0.3;
+  }
+
+  span.icon {
+    font-size: $topbarHeight * 0.5;
+    padding: 0 10px;
+    color: $same_blue;
+  }
+}

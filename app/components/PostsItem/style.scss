@@ -1,0 +1,103 @@
+@import "../../static/css/common";
+
+.posts-item {
+  div.top {
+    padding: 10px 15px;
+    display: block;
+    color: #bbb;
+
+    .avatar {
+      display: inline-block;
+      height: $postsItemHeight;
+      width: $postsItemHeight;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+
+    .user {
+      margin-top: $postsItemHeight * 0.1;
+      margin-left: 15px;
+      p {
+        line-height: $postsItemHeight * 0.4;
+        height: $postsItemHeight * 0.4;
+        font-size: $postsItemHeight * 0.25;
+      }
+      .name {
+        color: $same_blue;
+      }
+
+      .time {
+      }
+    }
+
+    .func {
+      line-height: $postsItemHeight;
+      height: $postsItemHeight;
+      padding-left: 10px;
+    }
+  }
+
+  div.content {
+    .text-type {
+      padding: 10px 15px;
+      color: #777;
+      max-height: 300px;
+      overflow: auto;
+    }
+  }
+
+  div.bottom {
+    color: #999;
+    span {
+      line-height: $postsItemHeight;
+      height: $postsItemHeight;
+    }
+
+    padding: 10px 15px;
+    div {
+      display: inline-block;
+    }
+
+    .count {
+      div {
+        padding-right: 8px;
+        span {
+          padding-right: 2px;
+          font-size: $postsItemHeight * 0.25;
+        }
+      }
+    }
+
+    .interact {
+      span {
+        font-size: $postsItemHeight * 0.4;
+        padding-left: 30px;
+      }
+
+      .dosame {
+        i:last-child {
+          display: none;
+        }
+      }
+      .dosame.actived {
+        color: red;
+        i:first-child {
+          display: none;
+        }
+        i:last-child {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  div.attachment {
+    display: block;
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

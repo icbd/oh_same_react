@@ -17,6 +17,7 @@ export default {
             // ios safari 无痕模式下，直接使用 localStorage.setItem 会报错
             localStorage.setItem(key, value);
         } catch (ex) {
+            alert("隐身模式将破坏App功能.");
             // 开发环境下提示 error
             if (__DEV__) {
                 console.error('localStorage.setItem报错, ', ex.message);

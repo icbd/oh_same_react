@@ -1,0 +1,13 @@
+@import "../../static/css/common";
+
+.posts-list {
+
+  min-height: 100px;
+  padding-bottom: $topbarHeight;
+
+  .loading-gif {
+    display: block;
+    width: 20%;
+    margin: 30px auto;
+  }
+}

@@ -9,7 +9,7 @@
     background-color: #eee;
     p.logo {
       color: $same_blue;
-      font-family: Palatino, “Palatino LT STD”, “Palatino Linotype”, “Book Antiqua”, Georgia, serif;
+      @include serif_font_family;
       font-size: 2em;
       font-weight: 900;
       text-shadow: 0 0 1px $light_sky;

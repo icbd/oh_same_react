@@ -40,11 +40,18 @@ $topbarHeight: 45px;
   }
 
   span.icon {
-    font-size: $topbarHeight / 2;
+    font-size: $topbarHeight * 0.5;
     margin-right: 10px;
     margin-left: 10px;
   }
 }
 
 $light_sky: #D9F0FB;
-$same_blue: #0093ff;
+$same_blue: #2694FF;
+
+$channelItemHeight: 45px;
+$postsItemHeight: 45px;
+
+@mixin serif_font_family {
+  font-family: Palatino, “Palatino LT STD”, “Palatino Linotype”, “Book Antiqua”, Georgia, serif;
+}

@@ -1,0 +1,42 @@
+@import "../../../static/css/common";
+@import "../../../static/css/global";
+
+$create_post_bgc: rgb(245, 245, 245);
+.create-posts {
+  @include keep_main_body_width;
+  background-color: $create_post_bgc;
+  position: fixed;
+  display: inline-block;
+  bottom: 0;
+  width: 100%;
+
+  #createPostsCamera {
+    display: inline-block;
+    height: $topbarHeight;
+    width: $topbarHeight;
+    text-align: center;
+  }
+
+  span {
+    height: $topbarHeight;
+    line-height: $topbarHeight;
+    font-size: $topbarHeight * 0.3;
+    //padding: 0 10px;
+    width: 50px;
+    text-align: center;
+  }
+
+  input {
+    background-color: $create_post_bgc;
+    height: $topbarHeight;
+    line-height: $topbarHeight;
+    color: #777;
+    outline: none;
+    border: none;
+    width: calc(100% - 100px);
+  }
+
+  input::placeholder {
+    color: #aaa;
+  }
+}

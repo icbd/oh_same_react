@@ -1,0 +1,9 @@
+@import "../../../static/css/common";
+
+.channel-list-top-bar {
+
+  span.create {
+    font-size: $topbarHeight / 3.6 !important;
+    color: $same_blue;
+  }
+}
