@@ -1,0 +1,50 @@
+@import "../../../static/css/common";
+
+$home_top_height: $topbarHeight - 8px;
+
+.homt-page-top-bar {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: $home_top_height;
+  left: 0;
+  top: 0;
+  background-color: #eee;
+
+  span {
+    display: inline-block;
+    height: $home_top_height;
+    line-height: $home_top_height;
+    vertical-align: middle;
+  }
+
+  span.logo {
+    font-size: $home_top_height * 0.6;
+    @include serif_font_family;
+    padding: 0 15px;
+    color: $same_blue;
+    background-color: white;
+  }
+
+  span.search {
+    padding: 0 5px;
+  }
+
+  input.search {
+    height: $home_top_height;
+    line-height: $home_top_height;
+    font-size: $home_top_height * 0.3;
+    color: $same_blue;
+    border: none;
+    outline: none;
+    background-color: #eee;
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  span.btn {
+    background-color: white;
+    padding: 0 5px;
+  }
+}

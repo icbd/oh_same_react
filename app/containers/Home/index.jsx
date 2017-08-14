@@ -1,5 +1,6 @@
 import React from "react";
 import TabBar from "../../components/TabBar";
+import _TopBar from "./_TopBar";
 
 //import "./style.scss";
 
@@ -10,7 +11,8 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div className="home-page">Home
+            <div className="home-page">
+                <_TopBar/>
 
                 <TabBar activedAt="1"/>
             </div>
