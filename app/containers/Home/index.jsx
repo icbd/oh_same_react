@@ -1,6 +1,7 @@
 import React from "react";
 import TabBar from "../../components/TabBar";
 import _TopBar from "./_TopBar";
+import PostsListOfAll from "../PostsListOfAll/index";
 
 //import "./style.scss";
 
@@ -13,6 +14,8 @@ class Home extends React.Component {
         return (
             <div className="home-page">
                 <_TopBar/>
+
+                <PostsListOfAll/>
 
                 <TabBar activedAt="1"/>
             </div>

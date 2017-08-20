@@ -19,6 +19,7 @@ export const APIs = {
     "channel_posts": pre + "/channels/",    // GET /channels/:id/posts
 
     "posts_create": pre + "/posts",         // POST /posts
+    "posts_index": pre + "/posts",         // GET /posts
 };
 
 
