@@ -25,8 +25,8 @@ class _CreateMsg extends React.Component {
                        type="text"
                        placeholder=""
                        value={this.state.content}
-                       onFocus={this.onFocusHandler.bind(this)}
-                       onBlur={this.onBlueHandler.bind(this)}
+                       // onFocus={this.onFocusHandler.bind(this)}
+                       // onBlur={this.onBlueHandler.bind(this)}
                        onKeyDown={this.watchEnterKeydown.bind(this)}
                        onChange={this.inputHandle.bind(this)}/>
 

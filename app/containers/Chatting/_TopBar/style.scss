@@ -1,6 +1,13 @@
 @import "../../../static/css/common";
+@import "../../../static/css/global";
 
 .chatting-topbar {
+  @include keep_main_body_width;
+  left: auto !important;
+  position: fixed !important;
+  background-color: white ;
+  display: inline-block ;
+  top: 0;
 
   div.title {
     position: relative;

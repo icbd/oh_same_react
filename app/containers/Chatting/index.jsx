@@ -46,7 +46,7 @@ class Chatting extends React.Component {
             console.debug('msg', msg);
 
             // 间隔一分钟以上, 显示时间
-            if (msg.created_at - last_created_at > 10000) {
+            if (msg.created_at - last_created_at > 60000) {
                 chat_msgs_dom.push(
                     <div className="created_at" key={"created_at" + msg.created_at}>
                         <span>{showDate(msg.created_at, true)}</span>

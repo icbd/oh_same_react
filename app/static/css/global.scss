@@ -2,12 +2,12 @@
 
 // 控制主内容区域宽度
 @mixin keep_main_body_width {
-  display: inline-block;
-  margin: 0 auto;
-  width: 100%;
+  display: inline-block !important;
+  margin: 0 auto !important;
+  width: 100% !important;
   @media all and (min-width: 768px) {
     // 大屏幕条状显示
-    width: $main_body_width;
+    width: $main_body_width !important;
   }
 }
 
