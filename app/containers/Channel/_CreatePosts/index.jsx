@@ -44,7 +44,9 @@ class _CreatePosts extends React.Component {
 
 
     onBlueHandler() {
-        document.getElementById('create_posts_div').style.paddingBottom = "0";
+        setTimeout(function () {
+            document.getElementById('create_posts_div').style.paddingBottom = "0";
+        }, 50);
     }
 
     inputHandle(e) {

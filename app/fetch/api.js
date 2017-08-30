@@ -10,6 +10,7 @@ export const APIs = {
     "auth_uptoken": pre + "/auth/uptoken",  // POST /auth/uptoken
 
     "user": pre + "/users/",                // PATCH /users/:id
+    "user_show": pre + "/users/",                // GET /users/:id
     "user_posts": pre + '/users/',          // GET /users/:id/posts
     "user_channels": pre + '/users/',       // GET /users/:id/channels
 

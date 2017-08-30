@@ -1,0 +1,36 @@
+.chatting-msg {
+  //position: relative;
+  margin: 5px 0;
+
+  img.avatar {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: 0 5px;
+  }
+
+  span.content {
+    padding: 5px 12px 5px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 60%;
+    word-wrap: break-word;
+  }
+
+}
+
+.left {
+  span.content {
+    color: #333;
+    background-color: #eee;
+  }
+}
+
+.right {
+  span.content {
+    color: white;
+    background-color: #2694FF;
+  }
+}

@@ -6,6 +6,7 @@ import Login from "../containers/Login";
 import Home from "../containers/Home/index.jsx";
 import ChannelList from "../containers/ChannelList/index.jsx";
 import ChatList from "../containers/ChatList/index.jsx";
+import Chatting from "../containers/Chatting";
 import UserCenter from "../containers/UserCenter/index.jsx";
 import UserCenter_Setting from "../containers/UserCenter/Setting";
 import AboutPage from "../components/AboutPage/index";
@@ -36,6 +37,7 @@ class routeMap extends React.Component {
 
 
                     <Route path="ChatList" component={ChatList}/>
+                    <Route path="Chatting/:hid" component={Chatting}/>
 
 
                     <Route path="UserCenter" component={UserCenter}/>

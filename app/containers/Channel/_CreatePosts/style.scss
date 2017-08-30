@@ -2,7 +2,7 @@
 @import "../../../static/css/global";
 
 $create_post_bgc: rgb(245, 245, 245);
-.create-posts {
+.create-posts, .create-msg {
   @include keep_main_body_width;
   background-color: $create_post_bgc;
   position: fixed;
@@ -10,7 +10,7 @@ $create_post_bgc: rgb(245, 245, 245);
   bottom: 0;
   width: 100%;
 
-  #createPostsCamera {
+  #createPostsCamera, #createMsgCamera {
     display: inline-block;
     height: $topbarHeight;
     width: $topbarHeight;

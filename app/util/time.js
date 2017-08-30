@@ -3,7 +3,7 @@ function fullZero(num) {
 }
 
 export function showDate(dateObj, withTime = false) {
-    const date = (dateObj instanceof Date) ? dateObj : (new Date());
+    const date = (dateObj instanceof Date) ? dateObj : (new Date(dateObj));
 
     const Y = date.getFullYear();
     const m = fullZero(date.getMonth() + 1);
@@ -13,7 +13,7 @@ export function showDate(dateObj, withTime = false) {
     const H = fullZero(date.getHours());
     const i = fullZero(date.getMinutes());
     const s = fullZero(date.getSeconds());
-    const His = "" + H + '-' + i + '-' + s;
+    const His = "" + H + ':' + i + ':' + s;
 
 
     return withTime ? (Ymd + '  ' + His) : Ymd;

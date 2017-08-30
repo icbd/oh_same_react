@@ -1,5 +1,6 @@
 {
   "qiniu": {
     "bucket_domain": "http://oubq55ryq.bkt.clouddn.com/"
-  }
+  },
+  "ws_api": "ws://localhost:3333/"
 }

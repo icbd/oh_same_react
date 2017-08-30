@@ -26,3 +26,8 @@ export function getUserChannels(login_token, uid, user_id, page = 1, per_page = 
         per_page: per_page,
     }));
 }
+
+
+export function getUserBasicInfo(user_id) {
+    return axios.get(APIs.user_show + user_id);
+}
